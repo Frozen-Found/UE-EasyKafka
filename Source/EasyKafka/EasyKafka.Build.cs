@@ -9,7 +9,6 @@ public class EasyKafka : ModuleRules
 	public EasyKafka(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
-		CppStandard = CppStandardVersion.Cpp17;
 
 		PublicIncludePaths.AddRange(
 			new string[] {
@@ -49,8 +48,8 @@ public class EasyKafka : ModuleRules
 			}
 			);
 		bEnableExceptions = true;
-
-		if(Target.Platform == UnrealTargetPlatform.HoloLens || Target.Platform == UnrealTargetPlatform.Win64)
+		
+		if(Target.Platform == UnrealTargetPlatform.Win64)
 			bUseRTTI = true;//Avoid using RTTI on limux
     }
 }

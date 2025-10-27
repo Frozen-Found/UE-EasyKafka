@@ -8,7 +8,6 @@ public class KafkaConsumer : ModuleRules
 	public KafkaConsumer(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
-		CppStandard = CppStandardVersion.Cpp17;
         PublicSystemIncludePaths.Add(Path.Combine(ModuleDirectory, "Public"));
 
         PublicIncludePaths.AddRange(
@@ -45,7 +44,7 @@ public class KafkaConsumer : ModuleRules
 			);
 		bEnableExceptions = true;
 
-        if (Target.Platform == UnrealTargetPlatform.HoloLens || Target.Platform == UnrealTargetPlatform.Win64)
+        if (Target.Platform == UnrealTargetPlatform.Win64)
             bUseRTTI = true;//Avoid using RTTI on limux
     }
 }
